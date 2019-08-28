@@ -1,7 +1,9 @@
+setwd("Documents/PhD/courses/RC_evol_gen_saetre/")
+
 ## Study questions for Chapter 3 computer lab session ##
 
-# Name:
-# Date:
+# Name: Samuel
+# Date: 02/09/2109
 
 ### Discussion questions
 
@@ -20,6 +22,11 @@
 ## 4. Write a simple R function called square that will return the square of any numeric
 ##    variable it is given.
 
+square = function(numvar) {
+  res2 = numvar * numvar
+  return(res2)
+}
+
 ## 5.	You genotype a species of grasshoppers along a north south transect across the European Alps.
 ##    Near Munich, Germany, north of the Alps you sample 120 individuals; near Innsbruck, Austria, 
 ##    within the Alps you sample 122 individuals; near Verona, Italy, south of the Alps you sample 
@@ -31,9 +38,61 @@
 ##
 ##   Using the R code we learnt during the tutorial, calculate the allele frequencies in each population.
 ##   Then test whether there is a deviation from Hardy-Weinberg Equilibrium in each of them.
+Ng_obs = list(Mun=c(6,33,81),
+              Inn=c(20,59,43),
+              Ver=c(65,39,14))
+obs_freq = lapply(Ng_obs, function(x) {
+  A1 = (2*x[1]+x[2])/(2*sum(x))
+  A2 = (2*x[3]+x[2])/(2*sum(x))
+  return(c(A1,A2))
+})
+obs_freq
+exp_freq = lapply(obs_freq, function(x) {
+  homo1 = x[1]^2
+  het = 2*x[1]*x[2]
+  homo2 = x[2]^2
+  return(c(homo1,het,homo2))
+})
+exp_freq
+lapply(seq_along(Ng_obs), function(x) {
+  chisq.test(Ng_obs[[x]], p = exp_freq[[x]])
+})
+sapply(seq_along(exp_freq), function(y) {
+  exp_freq[[y]]*sum(Ng_obs[[y]])
+})
 
 ## 6. Using the functions we wrote during the tutorial, simulate drift over 2000 generations for a population
 ##    of 100 individuals. How does altering p from 0.3, 0.5 and 0.9 alter the outcome of the simulations? Which
 ##    is more likely to go to fixation?
-
-  
+# a custom function for simulating drift across multiple generations
+drift_sim <- function(N, p, ngen){
+  # initialise p
+  p_init <- p
+  # sample across all the generations
+  pvec <- sapply(1:ngen, function(x){
+    pA <- rbinom(1, 2*N, p)
+    p <<- pA/(2*N)
+  })
+  # create a vector of p over time
+  p <- c(p_init, pvec)
+  # write out
+  return(p)
+}
+# simulate drift for three different p
+a <- sapply(c(0.3, 0.5, 0.9), drift_sim, N = 100, ngen = 2000)
+# rename matrix
+colnames(a) <- c("p3", "p5", "p9")
+# get number of generations
+g <- seq(0, 2000, 1)
+# combine into a tibble
+library(tibble)
+library(tidyr)
+mydrift <- as.tibble(cbind(g, a))
+head(mydrift)
+mydrift <- gather(mydrift, key = "init_p", value = "p", -g)
+# plot data
+library(ggplot2)
+p <- ggplot(mydrift, aes(g, p, colour = init_p))
+p <- p + geom_line()
+p <- p + xlab("No. generations") + ylab("Allele freq (p)")
+p + theme_bw() + theme(legend.position = "bottom", legend.title = element_blank()) 
