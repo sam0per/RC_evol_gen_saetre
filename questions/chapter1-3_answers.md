@@ -53,7 +53,19 @@ Haldane (1932):
 2. Genetics of speciation
 
 MODERN SYNTHESIS  
+1. Gradual evolution
+2. There is genetic variation within populations (mutations, recombination and gene flow) and allele frequencies change via selection and drift.  
+3. Natural selection as a filter of phenotypes with high fitness.  
+4. Macro = micro
 
+MOLECULAR GENETICS  
+Sutton (1902) and Boveri (1904): chromosomes are pairs, separate at meiosis and all are required for proper embryonic development.  
+Morgan (1911): sex-limited inheritance and frequency of crossing over - physical distance between genes (gene mapping).  
+Avery (1944): role of DNA in heredity (DNAase vs. protease).  
+Watson and Crick (1953).  
+1. Four nucleotides composed of a sugar (deoxyribose) bound to a phosphate group and a nitrogen-containing base (A, T, G or C).  
+2. Double-stranded helix where sugar and phosphate constitute the backbone. Bases point inwards and are complementary connected by hydrogen bonds.  
+3. Anti-parallel 
 
 ### Chapter 2
 
