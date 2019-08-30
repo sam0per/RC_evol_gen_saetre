@@ -19,7 +19,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 3. If someone exercises every day, runs marathons, eats well, and is generally very healthy, the fitness is not passed on and the person's children still have to work just as hard to get that fit and healthy.
 
-_I have changed my mind, writing the answers is taking me too long_
+_I have changed my mind, writing the answers is taking me too long!_
 
 BEFORE DARWIN
 Greek philosophers
