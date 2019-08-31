@@ -65,7 +65,19 @@ Avery (1944): role of DNA in heredity (DNAase vs. protease).
 Watson and Crick (1953).  
 1. Four nucleotides composed of a sugar (deoxyribose) bound to a phosphate group and a nitrogen-containing base (A, T, G or C).  
 2. Double-stranded helix where sugar and phosphate constitute the backbone. Bases point inwards and are complementary connected by hydrogen bonds.  
-3. Anti-parallel 
+3. Anti-parallel 5'-3'.  
+4. Proteins can bond to outer edges of each base.
+
+CENTRAL DOGMA OF MOLECULAR BIOLOGY  
+1. DNA replication: polymerase, deoxy nucleotides, enzymatic repair mechanisms.  
+2. Transcription: RNA is single stand, sugar ribose, uracil. Protein synthesis is one process where RNA molecules are involved (mRNA, rRNA, tRNA).
+3. Translation: codons-anticodons.
+
+NEUTRAL THEORY (evolution at the molecular level)  
+Kimura (1968) alternative theory to modern synthesis (based on Darwinian natural selection: directional selection changes allele frequency and balancing selection such as heterozygote advantage maintain genetic polymorphisms).  
+1. Evolutionary changes mostly by random genetic drift.  
+2. Most variation is selectively neutral and not maintained by balancing selection.  
+3. Most mutations are deleterious and thus transient.  
 
 ### Chapter 2
 
